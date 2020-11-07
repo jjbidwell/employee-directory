@@ -1,34 +1,17 @@
-import React, {Component} from "react";
+import React from "react";
+import TableContent from "../Table-Content/table-content"
 import "./table.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import API from "../../utilities/API";
-
-const employees = [];
 
 
-class Table extends Component {
+function Table(props) {
+//console.log(props);
+const employeeArray = props.employees;
+//console.log(employeeArray)
 
-    componentDidMount() {
-        API.fillPage()
-        .then(res => {
-            const results = res.data.results;
-            results.forEach(element => {
-                const employee = {
-                    name: `${element.name.first} ${element.name.last}`,
-                    id: element.id.value,
-                    email: element.email,
-                    phone: element.phone
-                }
-                employees.push(employee);
-            });
-            console.log(employees);
-        });
-    }
-
-    render() {
         return (
-            <div className="container">
+            <div>
                 <table>
                     <tbody>
                         <tr>
@@ -36,22 +19,31 @@ class Table extends Component {
                         <th>Last Name</th>
                         <th>Employee ID</th>
                         <th>Phone Number</th>
+                        <th>Email Address</th>
                         <th>Age</th>
 
                         </tr>
-                        <tr>
-                            <td>Jill</td>
-                            <td>Smith</td>
-                            <td>1</td>
-                            <td>5555555555</td>
-                            <td>45</td>
-                        </tr>
+                        <TableContent employees={employeeArray}/>
                             
                     </tbody>
             </table>
+
+            <p>Or filter all employees</p>
+            <select>
+                <option value="">Please select a filter</option>
+                <option value="emp-descending">Employee Name: Descending</option>
+                <option value="emp-ascending">Employee Name: Ascending</option>
+                <option value="job-descending">Job Title: Descending</option>
+                <option value="job-ascending">Job Title: Ascending</option>
+                <option value="dep-descending">Department: Descending</option>
+                <option value="dep-ascending">Department: Ascending</option>
+                <option value="id-descending">ID: Descending</option>
+                <option value="id-ascending">ID: Ascending</option>
+            </select>
+     
         </div>
         );
-    }
+    
   }
   
   export default Table;
