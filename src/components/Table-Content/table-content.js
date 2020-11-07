@@ -9,7 +9,7 @@ function TableContent(props) {
     
         return (
             employees.map(result => 
-                <tr>
+                <tr key={result.id}>
                     <td className="firstName">{result.firstName}</td>
                     <td className="lastName">{result.lastName}</td>
                     <td className="id">{result.id}</td>

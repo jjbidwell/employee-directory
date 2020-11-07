@@ -9,7 +9,8 @@ const employees = [];
 class Searchbar extends Component {
     state = {
         search: "",
-        employees: []
+        employees: [],
+        filter: ""
     }
 
     componentDidMount() {
@@ -49,6 +50,19 @@ class Searchbar extends Component {
                 </div>
                 <button className= "btn btn-lg btn-info">Search</button>
             </form>
+
+            <div>
+            <p>Or filter all employees</p>
+            <select>
+                <option value="">Please select a filter</option>
+                <option value="emp-descending">Last Name: Descending</option>
+                <option value="emp-ascending">Last Name: Ascending</option>
+                <option value="id-descending">ID: Descending</option>
+                <option value="id-ascending">ID: Ascending</option>
+                <option value="age-descending">Age: Descending</option>
+                <option value="age-ascending">Age: Ascending</option>
+            </select>
+        </div>
       
         <Table employees = {this.state.employees}/>
         </div>
