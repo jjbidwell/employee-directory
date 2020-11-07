@@ -5,7 +5,6 @@ import "bootstrap/dist/js/bootstrap.js";
 
 function TableContent(props) {
     const employees = props.employees;
-    console.log(employees);
     
         return (
             employees.map(result => 
