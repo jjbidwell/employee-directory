@@ -4,8 +4,10 @@ import Navbar from "./components/Navbar/navbar";
 import Table from "./components/Table/table";
 import Searchbar from "./components/Searchbar/searchbar";
 import Filter from "./components/Filter/filter";
+import API from "./utilities/API";
 
 function App() {
+  API();
   return (
     <div>
       <Navbar />
