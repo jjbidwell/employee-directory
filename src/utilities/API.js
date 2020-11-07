@@ -1,16 +1,8 @@
 import React from "react";
-import $ from "jquery";
+import axios from "axios";
 
-function API () {
-    $.ajax({
-        url: 'https://randomuser.me/api/?results=50',
-        dataType: 'json',
-        success: function(data) {
-          console.log(data);
-        }
-      }).then(res => {
-          console.log(res);
-      });
+export default {
+  fillPage: function() {
+   return axios.get('https://randomuser.me/api/?seed=123?inc=email,id,name&results=50');
+    }
 }
-
-export default API;

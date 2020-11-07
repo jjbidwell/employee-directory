@@ -1,10 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import "./searchbar.css";
 import $ from"jquery";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import API from "../../utilities/API";
 
-function Searchbar() {
+class Searchbar extends Component {
+    state = {
+        employeeName: "",
+        employeeID: 0,
+        jobTitle: "",
+        department: ""
+    }
+
+    componentDidMount() {
+
+    }
+
+
+    render () {
     return (
         <div className="container">
             <form>
@@ -18,6 +32,7 @@ function Searchbar() {
             </form>
         </div>
     );
+}
   }
   
   export default Searchbar;
