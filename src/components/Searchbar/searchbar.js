@@ -6,15 +6,17 @@ import "bootstrap/dist/js/bootstrap.js";
 
 function Searchbar() {
     return (
-        <form>
-            <div className="form-group">
-                
-                <label for="employee-name">Search by employee name</label>
-                <input className="form-control" id="employee-name" type="text" placeholder="Employee's name"></input>
-            </div>
+        <div class="container">
+            <form>
+                <div className="form-group">
 
-            <button className= "btn btn-lg btn-info">Search</button>
-        </form>
+                    <label for="employee-name">Search by employee name</label>
+                    <input className="form-control" id="employee-name" type="text" placeholder="Employee's name"></input>
+                </div>
+
+                <button className= "btn btn-lg btn-info">Search</button>
+            </form>
+        </div>
     );
   }
   

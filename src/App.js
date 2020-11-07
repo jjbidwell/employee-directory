@@ -7,7 +7,7 @@ import Filter from "./components/Filter/filter";
 
 function App() {
   return (
-    <div className= "container">
+    <div>
       <Navbar />
       <Searchbar/>
       <Filter />

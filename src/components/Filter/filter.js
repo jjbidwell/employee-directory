@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 function Filter(){
     return (
-        <div>
+        <div className="container">
             <p>Or filter all employees</p>
             <select>
                 <option value="">Please select a filter</option>
