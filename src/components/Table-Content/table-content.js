@@ -4,10 +4,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
 function TableContent(props) {
+    const search = props.search.toLowerCase();
     const employees = props.employees;
-    
+    const filteredArray = [];
+    employees.forEach(element => {
+        const lowerCase = element.fullName.toLowerCase();
+        if (lowerCase.includes(search)) {
+            filteredArray.push(element);
+        }
+    });
         return (
-            employees.map(result => 
+            filteredArray.map(result => 
                 <tr key={result.id}>
                     <td className="firstName">{result.firstName}</td>
                     <td className="lastName">{result.lastName}</td>

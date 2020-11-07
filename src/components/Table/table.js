@@ -6,9 +6,10 @@ import "bootstrap/dist/js/bootstrap.js";
 
 
 function Table(props) {
-//console.log(props);
+
+const search = props.search;
 const employeeArray = props.employees;
-//console.log(employeeArray)
+
 
         return (
             <div>
@@ -23,7 +24,10 @@ const employeeArray = props.employees;
                         <th>Age</th>
 
                         </tr>
-                        <TableContent employees={employeeArray}/>
+                        <TableContent 
+                            employees={employeeArray}
+                            search = {search}    
+                        />
                             
                     </tbody>
             </table>

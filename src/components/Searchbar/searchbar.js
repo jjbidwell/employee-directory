@@ -41,7 +41,7 @@ class Searchbar extends Component {
 
     handleInputChange = event => {
         this.setState({ search: event.target.value }, () => {
-            console.log(this.state.search)
+            //console.log(this.state.search)
         })
         
     }
@@ -70,7 +70,10 @@ class Searchbar extends Component {
             </select>
         </div>
       
-        <Table employees = {this.state.employees}/>
+        <Table 
+            search = {this.state.search}
+            employees = {this.state.employees}
+        />
         </div>
     );
 }
