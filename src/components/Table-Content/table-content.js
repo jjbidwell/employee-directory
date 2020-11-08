@@ -10,6 +10,8 @@ function TableContent(props) {
     const department = props.department;
     //console.log(employees);
     const sort = props.sort;
+    let filteredArray = [];
+    let finalArray = [];
     
     //console.log(employees);
     switch (sort) {
@@ -36,15 +38,35 @@ function TableContent(props) {
         default: 
         break;
     }
-    const filteredArray = [];
-    employees.forEach(element => {
+
+    switch (gender) {
+        case "female": 
+        filteredArray = employees.filter(element => {
+            console.log(element.gender === "female");
+            return element.gender === "female";
+        });
+        //console.log(employees);
+        break;
+        case "male":
+        filteredArray = employees.filter(element => {
+            return element.gender === "male";
+        });
+        //console.log(employees);
+        break;
+        default: filteredArray = employees;
+        break;
+    }
+    //console.log(gender);
+    //console.log(department);
+
+    filteredArray.forEach(element => {
         const lowerCase = element.fullName.toLowerCase();
         if (lowerCase.includes(search)) {
-            filteredArray.push(element);
+            finalArray.push(element);
         }
     });
         return (
-            filteredArray.map(result => 
+            finalArray.map(result => 
                 <tr key={result.id}>
                     <td className="firstName">{result.firstName}</td>
                     <td className="lastName">{result.lastName}</td>

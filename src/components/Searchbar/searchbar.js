@@ -45,7 +45,7 @@ class Searchbar extends Component {
                 }
             });
             this.setState({employees: employees})
-            console.log(this.state.employees);
+            //console.log(this.state.employees);
         }).catch(err => {
             console.log(err);
         });
