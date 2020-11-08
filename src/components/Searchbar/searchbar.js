@@ -22,9 +22,7 @@ class Searchbar extends Component {
         API.fillPage()
         .then(res => {
             const results = res.data.results;
-            //console.log(results);
             results.forEach(element => {
-                
                 const employee = {
                     firstName: element.name.first,
                     lastName: element.name.last,
@@ -44,8 +42,7 @@ class Searchbar extends Component {
                     num ++;
                 }
             });
-            this.setState({employees: employees})
-            //console.log(this.state.employees);
+        this.setState({employees: employees})
         }).catch(err => {
             console.log(err);
         });
@@ -53,26 +50,22 @@ class Searchbar extends Component {
 
     handleInputChange = event => {
         this.setState({ search: event.target.value }, () => {
-            // console.log(this.state.search)
         })
         
     }
 
     handleSortChange = event => {
         this.setState({ sort: event.target.value }, () => {
-            //console.log(this.state.filter);
         })
     }
 
     handleGenderChange = event => {
         this.setState({ gender: event.target.value }, () => {
-            //console.log(this.state.filter);
         })
     }
 
     handleDepartmentChange = event => {
         this.setState({ department: event.target.value }, () => {
-            //console.log(this.state.filter);
         })
     }
 

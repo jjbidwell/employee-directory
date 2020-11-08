@@ -8,12 +8,10 @@ function TableContent(props) {
     const employees = props.employees;
     const gender = props.gender;
     const department = props.department;
-    //console.log(employees);
     const sort = props.sort;
     let filteredArray = [];
     let finalArray = [];
     
-    //console.log(employees);
     switch (sort) {
         case "emp-descending": 
         employees.sort((a,b) => (a.lastName > b.lastName) ? 1 : -1);
@@ -22,11 +20,9 @@ function TableContent(props) {
         employees.sort((a,b) => (a.lastName < b.lastName) ? 1 : -1);
         break;
         case "id-descending": 
-        //console.log('id-descending')
         employees.sort((a,b) => (a.id < b.id) ? 1 : -1);
         break;
         case "id-ascending": 
-        //console.log('id ascending')
         employees.sort((a,b) => (a.id > b.id) ? 1 : -1);
         break;
         case "age-descending": 
@@ -42,16 +38,13 @@ function TableContent(props) {
     switch (gender) {
         case "female": 
         filteredArray = employees.filter(element => {
-            //console.log(element.gender === "female");
             return element.gender === "female";
         });
-        //console.log(employees);
         break;
         case "male":
         filteredArray = employees.filter(element => {
             return element.gender === "male";
         });
-        //console.log(employees);
         break;
         default: filteredArray = employees;
         break;
@@ -60,7 +53,6 @@ function TableContent(props) {
     switch (department) {
         case "accounting": 
         filteredArray = filteredArray.filter(element => {
-            //console.log(element.department);
             return element.department === "Accounting";
         });
         break;
@@ -87,8 +79,6 @@ function TableContent(props) {
         default:
         break;
     }
-    //console.log(gender);
-    //console.log(department);
 
     filteredArray.forEach(element => {
         const lowerCase = element.fullName.toLowerCase();

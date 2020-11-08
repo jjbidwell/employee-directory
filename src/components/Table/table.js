@@ -12,7 +12,6 @@ const employees = props.employees;
 const sort = props.sort;
 const gender = props.gender;
 const department = props.department;
-//console.log(filter);
 
         return (
             <div>
