@@ -5,6 +5,8 @@ import "bootstrap/dist/js/bootstrap.js";
 import API from "../../utilities/API";
 import Table from "../Table/table";
 const employees = [];
+const departments = ["Accounting", "Engineering", "Sales", "Human Resources", "IT"];
+let num = 0;
 
 class Searchbar extends Component {
     state = {
@@ -20,6 +22,7 @@ class Searchbar extends Component {
             const results = res.data.results;
             //console.log(results);
             results.forEach(element => {
+                
                 const employee = {
                     firstName: element.name.first,
                     lastName: element.name.last,
@@ -27,13 +30,20 @@ class Searchbar extends Component {
                     id: count,
                     email: element.email,
                     phone: element.phone,
-                    age: element.dob.age
+                    age: element.dob.age,
+                    gender: element.gender,
+                    department: departments[num] 
                 }
                 employees.push(employee);
                 count ++;
+                if (num === 4){
+                    num = 0;
+                } else {
+                    num ++;
+                }
             });
             this.setState({employees: employees})
-            //console.log(this.state.employees);
+            console.log(this.state.employees);
         }).catch(err => {
             console.log(err);
         });

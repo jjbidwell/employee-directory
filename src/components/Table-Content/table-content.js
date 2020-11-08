@@ -32,7 +32,7 @@ function TableContent(props) {
         employees.sort((a,b) => (a.age > b.age) ? 1 : -1);
         break;
         default: 
-        console.log("Nothing");
+        break;
     }
     const filteredArray = [];
     employees.forEach(element => {
@@ -47,6 +47,7 @@ function TableContent(props) {
                     <td className="firstName">{result.firstName}</td>
                     <td className="lastName">{result.lastName}</td>
                     <td className="id">{result.id}</td>
+                    <td className="department">{result.department}</td>
                     <td className="phone">{result.phone}</td>
                     <td className="email">{result.email}</td> 
                     <td className="age">{result.age}</td>   

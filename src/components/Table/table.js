@@ -20,6 +20,7 @@ const filter = props.filter;
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Employee ID</th>
+                        <th>Department</th>
                         <th>Phone Number</th>
                         <th>Email Address</th>
                         <th>Age</th>
