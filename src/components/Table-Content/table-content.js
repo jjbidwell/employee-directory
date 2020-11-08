@@ -22,11 +22,11 @@ function TableContent(props) {
         employees.sort((a,b) => (a.lastName < b.lastName) ? 1 : -1);
         break;
         case "id-descending": 
-        console.log('id-descending')
+        //console.log('id-descending')
         employees.sort((a,b) => (a.id < b.id) ? 1 : -1);
         break;
         case "id-ascending": 
-        console.log('id ascending')
+        //console.log('id ascending')
         employees.sort((a,b) => (a.id > b.id) ? 1 : -1);
         break;
         case "age-descending": 
@@ -42,7 +42,7 @@ function TableContent(props) {
     switch (gender) {
         case "female": 
         filteredArray = employees.filter(element => {
-            console.log(element.gender === "female");
+            //console.log(element.gender === "female");
             return element.gender === "female";
         });
         //console.log(employees);
@@ -56,6 +56,37 @@ function TableContent(props) {
         default: filteredArray = employees;
         break;
     }
+    
+    switch (department) {
+        case "accounting": 
+        filteredArray = filteredArray.filter(element => {
+            //console.log(element.department);
+            return element.department === "Accounting";
+        });
+        break;
+        case "engineering": 
+        filteredArray = filteredArray.filter(element => {
+            return element.department === "Engineering";
+        });
+        break;
+        case "sales": 
+        filteredArray = filteredArray.filter(element => {
+            return element.department === "Sales";
+        });
+        break;
+        case "hr": 
+        filteredArray = filteredArray.filter(element => {
+            return element.department === "Human Resources";
+        });
+        break;
+        case "it": 
+        filteredArray = filteredArray.filter(element => {
+            return element.department === "IT";
+        });
+        break;
+        default:
+        break;
+    }
     //console.log(gender);
     //console.log(department);
 
@@ -65,6 +96,7 @@ function TableContent(props) {
             finalArray.push(element);
         }
     });
+
         return (
             finalArray.map(result => 
                 <tr key={result.id}>
