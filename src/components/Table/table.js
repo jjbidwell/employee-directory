@@ -8,8 +8,10 @@ import "bootstrap/dist/js/bootstrap.js";
 function Table(props) {
 
 const search = props.search;
-const employeeArray = props.employees;
-const filter = props.filter;
+const employees = props.employees;
+const sort = props.sort;
+const gender = props.gender;
+const department = props.department;
 //console.log(filter);
 
         return (
@@ -27,9 +29,11 @@ const filter = props.filter;
 
                         </tr>
                         <TableContent 
-                            employees={employeeArray}
+                            employees={employees}
                             search = {search}    
-                            filter = {filter}
+                            sort = {sort}
+                            gender = {gender}
+                            department = {department}
                         />
                             
                     </tbody>

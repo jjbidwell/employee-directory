@@ -12,7 +12,9 @@ class Searchbar extends Component {
     state = {
         search: "",
         employees: [],
-        filter: ""
+        sort: "",
+        gender: "",
+        department: "", 
     }
 
     componentDidMount() {
@@ -56,8 +58,20 @@ class Searchbar extends Component {
         
     }
 
-    handleSelectChange = event => {
-        this.setState({ filter: event.target.value }, () => {
+    handleSortChange = event => {
+        this.setState({ sort: event.target.value }, () => {
+            //console.log(this.state.filter);
+        })
+    }
+
+    handleGenderChange = event => {
+        this.setState({ gender: event.target.value }, () => {
+            //console.log(this.state.filter);
+        })
+    }
+
+    handleDepartmentChange = event => {
+        this.setState({ department: event.target.value }, () => {
             //console.log(this.state.filter);
         })
     }
@@ -73,8 +87,8 @@ class Searchbar extends Component {
             </form>
 
             <div>
-            <p>Or filter all employees</p>
-            <select onChange={this.handleSelectChange}>
+            <p>Sort employees</p>
+            <select onChange={this.handleSortChange}>
                 <option value="">Please select a filter</option>
                 <option value="emp-descending">Last Name: Descending</option>
                 <option value="emp-ascending">Last Name: Ascending</option>
@@ -83,12 +97,31 @@ class Searchbar extends Component {
                 <option value="age-descending">Age: Descending</option>
                 <option value="age-ascending">Age: Ascending</option>
             </select>
+
+            <p>Filter by Department</p>
+            <select onChange={this.handleDepartmentChange}>
+                <option value="">Please select a filter</option>
+                <option value="accounting">Accounting</option>
+                <option value="engineering">Engineering</option>
+                <option value="sales">Sales</option>
+                <option value="hr">Human Resources</option>
+                <option value="it">IT</option>
+            </select>
+
+            <p>Filter by Gender</p>
+            <select onChange={this.handleGenderChange}>
+                <option value="">Please select a filter</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
         </div>
       
         <Table 
             search = {this.state.search}
             employees = {this.state.employees}
-            filter = {this.state.filter}
+            sort = {this.state.sort}
+            department ={this.state.department}
+            gender = {this.state.gender}
         />
         </div>
     );

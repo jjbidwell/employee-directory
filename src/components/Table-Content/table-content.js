@@ -6,11 +6,13 @@ import "bootstrap/dist/js/bootstrap.js";
 function TableContent(props) {
     const search = props.search.toLowerCase();
     const employees = props.employees;
+    const gender = props.gender;
+    const department = props.department;
     //console.log(employees);
-    const filter = props.filter;
+    const sort = props.sort;
     
     //console.log(employees);
-    switch (filter) {
+    switch (sort) {
         case "emp-descending": 
         employees.sort((a,b) => (a.lastName > b.lastName) ? 1 : -1);
         break;
