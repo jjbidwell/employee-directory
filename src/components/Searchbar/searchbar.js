@@ -79,43 +79,48 @@ class Searchbar extends Component {
                 </div>
             </form>
 
-            <div>
-            <p>Sort employees</p>
-            <select onChange={this.handleSortChange}>
-                <option value="">Please select a filter</option>
-                <option value="emp-descending">Last Name: Descending</option>
-                <option value="emp-ascending">Last Name: Ascending</option>
-                <option value="id-descending">ID: Descending</option>
-                <option value="id-ascending">ID: Ascending</option>
-                <option value="age-descending">Age: Descending</option>
-                <option value="age-ascending">Age: Ascending</option>
-            </select>
+            <form>
+                <div className="form-group">
+                    <label for= "sort">Sort employees </label>
+                    <select className="form-control" id="sort" onChange={this.handleSortChange}>
+                        <option value="">Please select a filter</option>
+                        <option value="emp-descending">Last Name: Descending</option>
+                        <option value="emp-ascending">Last Name: Ascending</option>
+                        <option value="id-descending">ID: Descending</option>
+                        <option value="id-ascending">ID: Ascending</option>
+                        <option value="age-descending">Age: Descending</option>
+                        <option value="age-ascending">Age: Ascending</option>
+                    </select>
+                </div>
 
-            <p>Filter by Department</p>
-            <select onChange={this.handleDepartmentChange}>
-                <option value="">Please select a filter</option>
-                <option value="accounting">Accounting</option>
-                <option value="engineering">Engineering</option>
-                <option value="sales">Sales</option>
-                <option value="hr">Human Resources</option>
-                <option value="it">IT</option>
-            </select>
-
-            <p>Filter by Gender</p>
-            <select onChange={this.handleGenderChange}>
-                <option value="">Please select a filter</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-            </select>
-        </div>
+                <div className="form-group">
+                    <label for="department-filter">Filter by Department</label>
+                    <select class="form-control" id="department-filter" onChange={this.handleDepartmentChange}>
+                        <option value="">Please select a filter</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="sales">Sales</option>
+                        <option value="hr">Human Resources</option>
+                        <option value="it">IT</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label for ="gender-filter">Filter by Gender</label>
+                    <select className="form-control" id="gender-filter" onChange={this.handleGenderChange}>
+                        <option value="">Please select a filter</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+            </form>
       
-        <Table 
-            search = {this.state.search}
-            employees = {this.state.employees}
-            sort = {this.state.sort}
-            department ={this.state.department}
-            gender = {this.state.gender}
-        />
+            <Table 
+                search = {this.state.search}
+                employees = {this.state.employees}
+                sort = {this.state.sort}
+                department ={this.state.department}
+                gender = {this.state.gender}
+            />
         </div>
     );
 }

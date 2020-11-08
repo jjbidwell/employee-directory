@@ -90,9 +90,9 @@ function TableContent(props) {
         return (
             finalArray.map(result => 
                 <tr key={result.id}>
+                    <th scope="row" className="id">{result.id}</th>
                     <td className="firstName">{result.firstName}</td>
-                    <td className="lastName">{result.lastName}</td>
-                    <td className="id">{result.id}</td>
+                    <td className="lastName">{result.lastName}</td>                    
                     <td className="department">{result.department}</td>
                     <td className="phone">{result.phone}</td>
                     <td className="email">{result.email}</td> 

@@ -15,16 +15,16 @@ const department = props.department;
 
         return (
             <div>
-                <table>
+                <table className="table">
                     <tbody>
                         <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Employee ID</th>
-                        <th>Department</th>
-                        <th>Phone Number</th>
-                        <th>Email Address</th>
-                        <th>Age</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Age</th>
 
                         </tr>
                         <TableContent 
