@@ -41,9 +41,15 @@ class Searchbar extends Component {
 
     handleInputChange = event => {
         this.setState({ search: event.target.value }, () => {
-            //console.log(this.state.search)
+            // console.log(this.state.search)
         })
         
+    }
+
+    handleSelectChange = event => {
+        this.setState({ filter: event.target.value }, () => {
+            console.log(this.state.filter);
+        })
     }
 
     render () {
@@ -59,7 +65,7 @@ class Searchbar extends Component {
 
             <div>
             <p>Or filter all employees</p>
-            <select>
+            <select onChange={this.handleSelectChange}>
                 <option value="">Please select a filter</option>
                 <option value="emp-descending">Last Name: Descending</option>
                 <option value="emp-ascending">Last Name: Ascending</option>
