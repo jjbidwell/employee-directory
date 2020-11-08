@@ -60,7 +60,6 @@ class Searchbar extends Component {
                     <label htmlFor="employee-name">Search by employee name</label>
                     <input onChange={this.handleInputChange} className="form-control" id="employee-name" type="text" placeholder="Employee's name"></input>
                 </div>
-                <button className= "btn btn-lg btn-info">Search</button>
             </form>
 
             <div>
