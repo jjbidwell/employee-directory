@@ -9,7 +9,8 @@ function Table(props) {
 
 const search = props.search;
 const employeeArray = props.employees;
-
+const filter = props.filter;
+//console.log(filter);
 
         return (
             <div>
@@ -27,6 +28,7 @@ const employeeArray = props.employees;
                         <TableContent 
                             employees={employeeArray}
                             search = {search}    
+                            filter = {filter}
                         />
                             
                     </tbody>

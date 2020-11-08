@@ -6,6 +6,8 @@ import "bootstrap/dist/js/bootstrap.js";
 function TableContent(props) {
     const search = props.search.toLowerCase();
     const employees = props.employees;
+    const filter = props.filter;
+    console.log(filter);
     const filteredArray = [];
     employees.forEach(element => {
         const lowerCase = element.fullName.toLowerCase();
