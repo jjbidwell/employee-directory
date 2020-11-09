@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import "./table-content.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import { render } from "@testing-library/react";
 
 function TableContent(props) {
     const search = props.search.toLowerCase();
@@ -101,7 +102,7 @@ function TableContent(props) {
                 )
         )
 
-        
+    
       }
       
       export default TableContent;
