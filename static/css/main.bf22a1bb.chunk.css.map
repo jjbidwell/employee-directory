@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Table/table.css"],"names":[],"mappings":"AAAA,OACI,gBAAiB,CACjB,aACJ","file":"main.bf22a1bb.chunk.css","sourcesContent":["#table {\r\n    max-height: 450px;\r\n    overflow: auto;\r\n}"]}
